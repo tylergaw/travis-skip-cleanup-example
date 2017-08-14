@@ -6,6 +6,12 @@ An isolated example of a change in functionality between Travis Precise and Trus
 
 Precise builds seem to function as if `skip_cleanup` is set to `true` by default. Because the node dependencies are still available in the `deploy` section. Trusty acts as if `skip_cleanup` is set to `false` by default because the node dependencies are not available in `deploy`.
 
+For this demo I've made three tags:
+
+1. One from `master`. This will fail in the `deploy` set because it's using the default Trusty and does not have `skip_cleanup` set.
+2. One from `precise`. This will succeed. Because it specifies `dist: precise`, but does **not** set `skip_cleanup`
+3. One from `trusty-fix`. This will succeed. Because it specifies `skip_cleanup: true`.
+
 ### Details
 
 The `.travis.yml` conf in this project is a slimmed down version of a common conf I've used on a dozen or so projects over the last few years. Quick rundown. These projects use npm to install dependencies, test, and build. On tags the `deploy` cycle is triggered and another script runs. Usually a shell script. (`deploy.sh`) in this project.
