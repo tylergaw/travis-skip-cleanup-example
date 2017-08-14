@@ -8,9 +8,9 @@ Precise builds seem to function as if `skip_cleanup` is set to `true` by default
 
 For this demo I've made three tags:
 
-1. One from `master`. This will fail in the `deploy` set because it's using the default Trusty and does not have `skip_cleanup` set.
-2. One from `precise`. This will succeed. Because it specifies `dist: precise`, but does **not** set `skip_cleanup`
-3. One from `trusty-fix`. This will succeed. Because it specifies `skip_cleanup: true`.
+1. One from `master`. This will fail in `deploy` because it's using the default Trusty and does not have `skip_cleanup` set. See https://travis-ci.org/tylergaw/travis-skip-cleanup-example/builds/264392615#L481
+2. One from `precise`. This will succeed. Because it specifies `dist: precise`, but does **not** set `skip_cleanup`. See https://travis-ci.org/tylergaw/travis-skip-cleanup-example/builds/264393263#L275
+3. One from `trusty-fix`. This will succeed. Because it specifies `skip_cleanup: true`. See https://travis-ci.org/tylergaw/travis-skip-cleanup-example/builds/264393715#L473
 
 ### Details
 
