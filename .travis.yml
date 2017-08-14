@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "6.9.1"
+sudo: false
+install:
+  - npm install
+script:
+  - npm test
+deploy:
+  - provider: script
+    script: ./deploy.sh
+    on:
+      tags: true
+    skip_cleanup: true
